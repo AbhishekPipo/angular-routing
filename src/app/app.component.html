@@ -1,0 +1,30 @@
+<div class="main-container">
+    <div class="nav-container">
+        <ul>
+            <!-- active is css class -->
+            <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a routerLink="">Home</a></li>
+            <li routerLinkActive="active"><a routerLink="/About">About</a></li> 
+            <li routerLinkActive="active"><a routerLink="/Contact">Contact</a></li>
+            <li routerLinkActive="active"><a routerLink="/Courses">Courses</a></li>
+
+  <!-- <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a routerLink="" fragment="Home" >Home</a></li>
+            <li routerLinkActive="active"><a fragment="About" routerLink="">About</a></li> 
+            <li routerLinkActive="active"><a fragment="Contact" routerLink="">Contact</a></li>
+            <li routerLinkActive="active"><a fragment="Courses" routerLink="">Courses</a></li> -->
+        
+        <span style="float: right;" >
+        
+        <li (click)="login()" ><a href="">Login</a></li>
+        <li  (click)="logout()"  ><a href="">Logout</a></li>
+        </span>
+        
+        </ul>
+    </div>
+    <div class="component-container">
+        <!-- <app-home id="Home" ></app-home>
+        <app-about id="About" ></app-about>
+        <app-contact id="Contact" ></app-contact>
+        <app-courses id="Courses" ></app-courses> -->
+        <router-outlet></router-outlet>
+    </div> 
+</div>

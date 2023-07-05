@@ -1,0 +1,35 @@
+<div class="course-container">
+    <div>
+        <img src="{{course.image}}" width="560" height="280">
+    </div>
+    <div>
+        <!-- <p title="bye" >hi</p> -->
+        <h1 *ngIf="!editMode" style="text-align: center;">{{course.name}}</h1>
+        <div *ngIf="editMode" class="" style="text-align: center;">
+            <input type="text" [(ngModel)]="course.name" >
+        </div>
+    </div>
+    <div class="course-details">
+        <div style="margin: 0px 10px;"><b>Author: </b>{{course.author}}</div>
+        <div style="margin: 0px 10px;"><b>Duration: </b>{{course.duration}}</div>
+        <div style="margin: 0px 10px;"><b>Type: </b>{{course.type}}</div>
+    </div>
+    <div style="margin: 0px 10px;">
+        <h2>Price: {{course.price}}$</h2>
+    </div>
+    <div style="margin: 20px 10px;">
+        <p>{{course.description}}</p>
+    </div>
+
+<!-- <a [routerLink]="['/Courses/Course', 101]" >Go to first Course</a> -->
+
+<!-- <button (click)="editBtnClicked()" class="btn btn-buy" > Edit </button>
+<button *ngIf="editMode"   (click)="doneBtnClicked()" class="btn btn-showdetailes">Done</button> -->
+<!-- 
+
+<button  [routerLink]="['/Courses/Course',course.id]" [queryParams]="{edit: true}" (click)="editBtnClicked()" class="btn btn-buy" > Edit </button>
+<button  [routerLink]="['/Courses/Course',course.id]" [queryParams]="{edit: true,done: true}"  *ngIf="editMode"   (click)="doneBtnClicked()" class="btn btn-showdetailes">Done</button> -->
+<button  (click)="appendQuery()" class="btn btn-buy" >Edit</button>
+<button *ngIf="editMode"    (click)="editMode=false"  [routerLink]="['/Courses/Course', course.id]" >Update </button>
+
+</div>
